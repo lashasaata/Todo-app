@@ -20,7 +20,7 @@ function Creator() {
         <input
           type="text"
           placeholder="Create a new todo…"
-          className="outline-none placeholder:text-xs placeholder:text-[#9495a5] placeholder:font-[500] placeholder:leading-[-0.17px]"
+          className="outline-none placeholder:text-xs placeholder:text-[#9495a5] placeholder:font-[500] placeholder:leading-[-0.17px] mt-[-4px]"
         />
       </div>
     </div>
