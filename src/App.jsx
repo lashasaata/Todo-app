@@ -1,10 +1,16 @@
+import { useState } from "react";
 import "./App.css";
 import Creator from "./comtonents/Creator";
+import List from "./comtonents/List";
 function App() {
+  const [useToDo, setUseToDo] = useState([]);
   return (
     <div className="flex flex-col items-center min-h-screen relative">
       <div className="h-[200px] min-w-full bg-[url('./images/bg-mobile-light.jpg')] bg-no-repeat bg-cover"></div>
-      <Creator />
+      <div className="absolute">
+        <Creator setUseToDo={setUseToDo} useToDo={useToDo} />
+        <List useToDo={useToDo} />
+      </div>
     </div>
   );
 }
