@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Creator from "./comtonents/Creator";
 import List from "./comtonents/List";
+import Filter from "./comtonents/Filter";
 function App() {
   const [useToDo, setUseToDo] = useState([]);
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="absolute">
         <Creator setUseToDo={setUseToDo} useToDo={useToDo} />
         <List useToDo={useToDo} />
+        <Filter />
       </div>
     </div>
   );
