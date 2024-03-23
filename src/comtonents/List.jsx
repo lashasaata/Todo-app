@@ -42,7 +42,7 @@ function List(props) {
       <div className="w-[327px] flex justify-center pt-4 pb-5">
         <div className="w-[287px] flex items-center justify-between">
           <p className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]">
-            <span>5 </span>items left
+            <span>{props.useToDo.length} </span>items left
           </p>
           <span className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]">
             Clear Completed

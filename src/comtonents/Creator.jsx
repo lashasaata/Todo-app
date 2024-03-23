@@ -12,7 +12,8 @@ function Creator(props) {
   };
   const handleEnter = (e) => {
     let index = Math.floor(Math.random() * 10000);
-    if (e.key === `Enter`) {
+    console.log(useInput);
+    if (e.key === `Enter` && (useInput != null || useInput != "")) {
       const newToDO = {
         complited: useButton,
         toDo: useInput,
