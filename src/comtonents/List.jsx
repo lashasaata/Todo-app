@@ -1,4 +1,13 @@
 function List(props) {
+  const clearComplited = () => {
+    const uncompletedElements = props.useToDo.filter((e) => {
+      if (!e.complited) {
+        return e;
+      }
+    });
+    props.setUseToDo(uncompletedElements);
+    console.log(props.useToDo);
+  };
   return (
     <main className="w-[327px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] flex flex-col items-center">
       {props.useToDo.map((e) => {
@@ -44,7 +53,10 @@ function List(props) {
           <p className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]">
             <span>{props.useToDo.length} </span>items left
           </p>
-          <span className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]">
+          <span
+            onClick={clearComplited}
+            className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]"
+          >
             Clear Completed
           </span>
         </div>

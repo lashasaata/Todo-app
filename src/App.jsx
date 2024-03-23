@@ -10,7 +10,7 @@ function App() {
       <div className="h-[200px] min-w-full bg-[url('./images/bg-mobile-light.jpg')] bg-no-repeat bg-cover"></div>
       <div className="absolute">
         <Creator setUseToDo={setUseToDo} useToDo={useToDo} />
-        <List useToDo={useToDo} />
+        <List useToDo={useToDo} setUseToDo={setUseToDo} />
         <Filter />
       </div>
     </div>
