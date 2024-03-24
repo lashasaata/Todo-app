@@ -6,7 +6,13 @@ function List(props) {
       }
     });
     props.setUseToDo(uncompletedElements);
-    console.log(props.useToDo);
+  };
+
+  const deleteToDo = (e) => {
+    console.log(e.target);
+    let key = e.target.parentElement.parentElement.getAttribute("key");
+    console.log(key);
+    // console.log("hi");
   };
   return (
     <main className="w-[327px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] flex flex-col items-center">
@@ -38,13 +44,16 @@ function List(props) {
                 {e.toDo}
               </p>
             </div>
-            <button>
-              <img
-                className="w-3 h-3"
-                src="./images/icon-cross.svg"
-                alt="cross_icon"
-              />
-            </button>
+            <div onClick={deleteToDo}>
+              <button>
+                <img
+                  className="w-3 h-3"
+                  src="./images/icon-cross.svg"
+                  alt="cross_icon"
+                />
+              </button>
+            </div>
+            <span>{e.id}</span>
           </div>
         );
       })}
