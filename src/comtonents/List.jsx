@@ -8,11 +8,29 @@ function List(props) {
     props.setUseToDo(uncompletedElements);
   };
 
-  const deleteToDo = (e) => {
-    console.log(e.target);
-    let key = e.target.parentElement.parentElement.getAttribute("key");
-    console.log(key);
-    // console.log("hi");
+  // this function makes todos complited
+  const complite = (id) => {
+    let ids = [];
+    props.useToDo.map((e) => {
+      ids.push(e.id);
+    });
+    let compliteItemIndex = ids.indexOf(id);
+    const existToDos = [...props.useToDo];
+    existToDos[compliteItemIndex].complited =
+      !existToDos[compliteItemIndex].complited;
+    props.setUseToDo(existToDos);
+  };
+
+  // this function gets clicked img parent div "id" searches in todo list and deletes it
+  const deleteToDo = (id) => {
+    let ids = [];
+    props.useToDo.map((e) => {
+      ids.push(e.id);
+    });
+    let deleteItemIndex = ids.indexOf(id);
+    const existToDos = [...props.useToDo];
+    existToDos.splice(deleteItemIndex, 1);
+    props.setUseToDo(existToDos);
   };
   return (
     <main className="w-[327px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] flex flex-col items-center">
@@ -24,6 +42,7 @@ function List(props) {
           >
             <div className="flex items-center gap-[12px]">
               <div
+                onClick={() => complite(e.id)}
                 className={`${
                   e.complited
                     ? "bg-gradient-to-br from-[#5df] to-[#c058f3]"
@@ -44,16 +63,14 @@ function List(props) {
                 {e.toDo}
               </p>
             </div>
-            <div onClick={deleteToDo}>
-              <button>
-                <img
-                  className="w-3 h-3"
-                  src="./images/icon-cross.svg"
-                  alt="cross_icon"
-                />
-              </button>
-            </div>
-            <span>{e.id}</span>
+            <button onClick={() => deleteToDo(e.id)}>
+              <img
+                key={e.id}
+                className="w-3 h-3"
+                src="./images/icon-cross.svg"
+                alt="cross_icon"
+              />
+            </button>
           </div>
         );
       })}
