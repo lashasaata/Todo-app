@@ -11,7 +11,7 @@ function App() {
       <div className="absolute">
         <Creator setUseToDo={setUseToDo} useToDo={useToDo} />
         <List useToDo={useToDo} setUseToDo={setUseToDo} />
-        <Filter />
+        <Filter useToDo={useToDo} setUseToDo={setUseToDo} />
       </div>
     </div>
   );
