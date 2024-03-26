@@ -1,3 +1,5 @@
+import Filter from "./Filter";
+
 function List(props) {
   const clearComplited = () => {
     const uncompletedElements = props.useToDo.filter((e) => {
@@ -33,12 +35,12 @@ function List(props) {
     props.setUseToDo(existToDos);
   };
   return (
-    <main className="w-[327px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] flex flex-col items-center">
+    <main className="w-[327px] lg:w-[540px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] lg:mt-6 flex flex-col items-center">
       {[...props.useFilter].map((e) => {
         return (
           <div
             key={e.id}
-            className="w-[327px] flex items-center justify-between px-5 py-4 border-b border-solid border-[#e3e4f1] "
+            className="w-[327px] lg:w-[540px] flex items-center justify-between px-5 lg:px-6 py-4 lg:py-5 border-b border-solid border-[#e3e4f1] "
           >
             <div className="flex items-center gap-[12px]">
               <div
@@ -46,8 +48,8 @@ function List(props) {
                 className={`${
                   e.complited
                     ? "bg-gradient-to-br from-[#5df] to-[#c058f3]"
-                    : "bg-white border border-solid border-slate-200"
-                } w-5 h-5 rounded-full flex justify-center items-center`}
+                    : "bg-white border border-solid border-[#e3e4f1]"
+                } w-5 lg:w-6 h-5 lg:h-6 rounded-full flex justify-center items-center`}
               >
                 {e.complited ? (
                   <img src="./images/icon-check.svg" alt="check_icon" />
@@ -58,7 +60,7 @@ function List(props) {
               <p
                 className={`${
                   e.complited ? "text-[#d1d2da] line-through" : "text-[#494c6b]"
-                } text-xs tracking-[-0.17px]`}
+                } text-xs lg:text-lg tracking-[-0.17px] lg:tracking-[-0.25px] lg:leading-[18px] lg:mt-[-4px]`}
               >
                 {e.toDo}
               </p>
@@ -66,7 +68,7 @@ function List(props) {
             <button onClick={() => deleteToDo(e.id)}>
               <img
                 key={e.id}
-                className="w-3 h-3"
+                className="w-3 lg:w-[18px] h-3 lg:h-[18px]"
                 src="./images/icon-cross.svg"
                 alt="cross_icon"
               />
@@ -74,14 +76,16 @@ function List(props) {
           </div>
         );
       })}
-      <div className="w-[327px] flex justify-center pt-4 pb-5">
-        <div className="w-[287px] flex items-center justify-between">
-          <p className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]">
+      <div className="w-[327px] lg:w-[540px] flex justify-center pt-4 pb-5">
+        <div className="w-[287px] lg:w-[492px] flex items-center justify-between">
+          <p className="text-xs lg:text-sm text-[#9495a5] font-[500] tracking-[-0.17px] lg:tracking-[-0.19px]">
             <span>{props.useFilter.length} </span>items left
           </p>
+
+          <Filter />
           <span
             onClick={clearComplited}
-            className="text-xs text-[#9495a5] font-[500] tracking-[-0.17px]"
+            className="text-xs lg:text-sm text-[#9495a5] font-[500] tracking-[-0.17px] lg:tracking-[-0.19px]"
           >
             Clear Completed
           </span>
