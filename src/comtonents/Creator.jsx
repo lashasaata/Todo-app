@@ -7,17 +7,22 @@ function Creator(props) {
     setUseButton(!useButton);
   };
   const [useInput, setUseInput] = useState();
+
   const inputHAndler = (e) => {
     setUseInput(e.target.value);
   };
+
   const handleEnter = (e) => {
     let index = Math.floor(Math.random() * 10000);
-    if (e.key === `Enter` && (useInput != null || useInput != "")) {
+    if (e.key === `Enter` && useInput != null && useInput != "") {
       const newToDO = {
         complited: useButton,
         toDo: useInput,
         id: index,
       };
+      e.target.value = "";
+      setUseInput("");
+      setUseButton(false);
       props.setUseToDo([...props.useToDo, newToDO]);
     }
   };
