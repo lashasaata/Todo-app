@@ -45,7 +45,7 @@ function Filter(props) {
           onClick={sort1}
           className={`${
             useFilter1 ? "text-[#3a7cfd]" : "text-[#9495a5]"
-          } text-sm font-[700] tracking-[-0.19px]`}
+          } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
         >
           All
         </span>
@@ -53,7 +53,7 @@ function Filter(props) {
           onClick={sort2}
           className={`${
             useFilter2 ? "text-[#3a7cfd]" : "text-[#9495a5]"
-          } text-sm font-[700] tracking-[-0.19px]`}
+          } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
         >
           Active
         </span>
@@ -61,7 +61,7 @@ function Filter(props) {
           onClick={sort3}
           className={`${
             useFilter3 ? "text-[#3a7cfd]" : "text-[#9495a5]"
-          } text-sm font-[700] tracking-[-0.19px]`}
+          } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
         >
           Completed
         </span>

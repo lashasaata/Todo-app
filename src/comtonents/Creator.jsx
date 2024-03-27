@@ -45,7 +45,7 @@ function Creator(props) {
             useButton
               ? "bg-gradient-to-br from-[#5df] to-[#c058f3]"
               : "bg-white border border-solid border-[#e3e4f1]"
-          } w-5 lg:w-6 h-5 lg:h-6 rounded-full flex justify-center items-center`}
+          } w-5 lg:w-6 h-5 lg:h-6 rounded-full flex justify-center items-center hover:cursor-pointer`}
         >
           {useButton ? (
             <img src="./images/icon-check.svg" alt="check_icon" />

@@ -34,13 +34,16 @@ function List(props) {
     existToDos.splice(deleteItemIndex, 1);
     props.setUseToDo(existToDos);
   };
+
+  const divHoverHandler = () => {};
   return (
     <main className="w-[327px] lg:w-[540px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] lg:mt-6 flex flex-col items-center">
       {[...props.useFilter].map((e) => {
         return (
           <div
             key={e.id}
-            className="w-[327px] lg:w-[540px] flex items-center justify-between px-5 lg:px-6 py-4 lg:py-5 border-b border-solid border-[#e3e4f1] "
+            onMouseEnter={divHoverHandler}
+            className="w-[327px] lg:w-[540px] flex items-center justify-between px-5 lg:px-6 py-4 lg:py-5 border-b border-solid border-[#e3e4f1]  hover:cursor-pointer"
           >
             <div className="flex items-center gap-[12px]">
               <div
@@ -49,7 +52,7 @@ function List(props) {
                   e.complited
                     ? "bg-gradient-to-br from-[#5df] to-[#c058f3]"
                     : "bg-white border border-solid border-[#e3e4f1]"
-                } w-5 lg:w-6 h-5 lg:h-6 rounded-full flex justify-center items-center`}
+                } w-5 lg:w-6 h-5 lg:h-6 rounded-full flex justify-center items-center hover:cursor-ponter hover:border-[#55ddff]`}
               >
                 {e.complited ? (
                   <img src="./images/icon-check.svg" alt="check_icon" />
@@ -82,10 +85,9 @@ function List(props) {
             <span>{props.useFilter.length} </span>items left
           </p>
 
-          <Filter />
           <span
             onClick={clearComplited}
-            className="text-xs lg:text-sm text-[#9495a5] font-[500] tracking-[-0.17px] lg:tracking-[-0.19px]"
+            className="text-xs lg:text-sm text-[#9495a5] font-[500] tracking-[-0.17px] lg:tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]"
           >
             Clear Completed
           </span>
