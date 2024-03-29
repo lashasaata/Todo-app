@@ -6,6 +6,7 @@ export default {
     boxShadow: {
       creatorShadow: "0 35px 50px -15px rgba(194, 195, 214, 0.5)",
       mainShadow: "0 35px 50px -15px rgba(194, 195, 214, 0.5)",
+      dark: "0 35px 50px -15px rgba(0, 0, 0, 0.5)",
     },
   },
   plugins: [],
