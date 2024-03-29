@@ -73,7 +73,32 @@ function List(props) {
     }
   }, [props.useToDo]);
 
-  const divHoverHandler = () => {};
+  // focus handler on delete button
+  const mouseEnterHandler = (e) => {
+    const divButton = [...e.target.childNodes][1];
+    const displayProperty = window
+      .getComputedStyle(divButton)
+      .getPropertyValue("display");
+
+    if (displayProperty == "none" && divButton) {
+      divButton.style.display = "block";
+    }
+  };
+  const mouseLeaveHandler = (e) => {
+    const divButton = [...e.target.childNodes][1];
+    const displayProperty = window
+      .getComputedStyle(divButton)
+      .getPropertyValue("display");
+    const gapProperty = window
+      .getComputedStyle([...e.target.childNodes][0])
+      .getPropertyValue("gap");
+    console.log(gapProperty);
+    if (gapProperty == "12px" && displayProperty == "block" && divButton) {
+      // do nothing
+    } else if (displayProperty == "block" && divButton) {
+      divButton.style.display = "none";
+    }
+  };
   return (
     <div>
       <main className="w-[327px] lg:w-[540px] rounded-[5px] bg-white shadow-mainShadow mt-[16px] lg:mt-6 flex flex-col items-center">
@@ -81,10 +106,11 @@ function List(props) {
           return (
             <div
               key={e.id}
-              onMouseEnter={divHoverHandler}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="w-[327px] lg:w-[540px] flex items-center justify-between px-5 lg:px-6 py-4 lg:py-5 border-b border-solid border-[#e3e4f1]  hover:cursor-pointer"
             >
-              <div className="flex items-center gap-[12px]">
+              <div className="flex items-center gap-3 lg:gap-6">
                 <div
                   onClick={() => complite(e.id)}
                   className={`${
@@ -109,7 +135,10 @@ function List(props) {
                   {e.toDo}
                 </p>
               </div>
-              <button onClick={() => deleteToDo(e.id)}>
+              <button
+                onClick={() => deleteToDo(e.id)}
+                className="block lg:hidden"
+              >
                 <img
                   key={e.id}
                   className="w-3 lg:w-[18px] h-3 lg:h-[18px]"
