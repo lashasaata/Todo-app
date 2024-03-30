@@ -144,7 +144,9 @@ function List(props) {
                             : "text-[#d1d2da] line-through"
                         }`
                       : `${
-                          props.darkMode ? "text-[#c8cbe7]" : "text-[#494c6b]"
+                          props.darkMode
+                            ? "text-[#c8cbe7] hover:text-[#c8cbe7]"
+                            : "text-[#494c6b]"
                         }`
                   } text-xs lg:text-lg tracking-[-0.17px] lg:tracking-[-0.25px] lg:leading-[18px] lg:mt-[-4px]`}
                 >
@@ -181,9 +183,9 @@ function List(props) {
                   useFilter1
                     ? "text-[#3a7cfd]"
                     : props.darkMode
-                    ? "text-[#5b5e7e]"
-                    : "text-[#9495a5]"
-                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                    ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                    : "text-[#9495a5] hover:text-[#494c6b]"
+                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer`}
               >
                 All
               </span>
@@ -193,9 +195,9 @@ function List(props) {
                   useFilter2
                     ? "text-[#3a7cfd]"
                     : props.darkMode
-                    ? "text-[#5b5e7e]"
-                    : "text-[#9495a5]"
-                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                    ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                    : "text-[#9495a5] hover:text-[#494c6b]"
+                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer`}
               >
                 Active
               </span>
@@ -205,9 +207,9 @@ function List(props) {
                   useFilter3
                     ? "text-[#3a7cfd]"
                     : props.darkMode
-                    ? "text-[#5b5e7e]"
-                    : "text-[#9495a5]"
-                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                    ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                    : "text-[#9495a5] hover:text-[#494c6b]"
+                } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer`}
               >
                 Completed
               </span>
@@ -215,8 +217,10 @@ function List(props) {
             <span
               onClick={clearComplited}
               className={`${
-                props.darkMode ? "text-[#5b5e7e]" : "text-[#9495a5]"
-              } text-xs lg:text-sm font-[500] tracking-[-0.17px] lg:tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                props.darkMode
+                  ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                  : "text-[#9495a5] hover:text-[#494c6b]"
+              } text-xs lg:text-sm font-[500] tracking-[-0.17px] lg:tracking-[-0.19px] hover:cursor-pointer`}
             >
               Clear Completed
             </span>
@@ -237,8 +241,8 @@ function List(props) {
               useFilter1
                 ? "text-[#3a7cfd]"
                 : props.darkMode
-                ? "text-[#5b5e7e]"
-                : "text-[#9495a5]"
+                ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                : "text-[#9495a5] hover:text-[#494c6b]"
             } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
           >
             All
@@ -249,9 +253,9 @@ function List(props) {
               useFilter2
                 ? "text-[#3a7cfd]"
                 : props.darkMode
-                ? "text-[#5b5e7e]"
-                : "text-[#9495a5]"
-            } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                : "text-[#9495a5] hover:text-[#494c6b]"
+            } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer`}
           >
             Active
           </span>
@@ -261,9 +265,9 @@ function List(props) {
               useFilter3
                 ? "text-[#3a7cfd]"
                 : props.darkMode
-                ? "text-[#5b5e7e]"
-                : "text-[#9495a5]"
-            } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer hover:text-[#494c6b]`}
+                ? "text-[#5b5e7e] hover:text-[#e3e4f1]"
+                : "text-[#9495a5] hover:text-[#494c6b]"
+            } text-sm font-[700] tracking-[-0.19px] hover:cursor-pointer`}
           >
             Completed
           </span>
