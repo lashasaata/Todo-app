@@ -17,8 +17,8 @@ function App() {
       <div
         className={`${
           darkMode
-            ? "bg-[url('./images/bg-mobile-dark.jpg')] lg:bg-[url('./images/bg-desktop-dark.jpg')]"
-            : "bg-[url('./images/bg-mobile-light.jpg')] lg:bg-[url('./images/bg-desktop-light.jpg')]"
+            ? "bg-[url('/images/bg-mobile-dark.jpg')] lg:bg-[url('/images/bg-desktop-dark.jpg')]"
+            : "bg-[url('/images/bg-mobile-light.jpg')] lg:bg-[url('/images/bg-desktop-light.jpg')]"
         } h-[200px] lg:h-[300px] min-w-full bg-no-repeat bg-cover`}
       ></div>
       <div className="absolute">
